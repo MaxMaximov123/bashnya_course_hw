@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bashnya-hw3/bst"
 	"bashnya-hw3/deque"
 	"bashnya-hw3/stack"
 	"fmt"
+	"math/rand"
 )
 
 func main() {
@@ -54,6 +56,22 @@ func main() {
 
 	fmt.Println("Size", qe.Size())
 	fmt.Println("Is empty:", qe.IsEmpty())
+
+	// ------------------------------- //
+
+	// BST
+	// ------------------------------- //
+
+	fmt.Println("\nBST functions: \n")
+	b := bst.New()
+
+	for i := 0; i < 30; i++ {
+		b.Insert(rand.Intn(100))
+	}
+
+	bst.PrintTree(b.Root, 0, "@")
+	fmt.Println("14 in BST:", b.Find(14))
+	fmt.Println("Depth BST:", b.Depth())
 
 	// ------------------------------- //
 }
