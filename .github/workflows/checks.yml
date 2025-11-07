@@ -24,9 +24,11 @@ jobs:
         
     - name: Lint
       run: golangci-lint run -v -c ./.golangci-lint.yml ./...
-        
-    - name: Unit tests
+    
+    - name: Change dir
       run: cd uniq
+
+    - name: Unit tests
       run: go test -v ./...
 
     - name: Acceptance tests
